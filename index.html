@@ -1,0 +1,40 @@
+<!DOCTYPE html><html><head><style>
+        h1{ display: inline;}
+        body{ direction:rtl; text-align: center; }
+        button{ padding: 1%;margin: 3%;width: 250px;}
+        table{   margin-left: auto;margin-right: auto;}
+        #amount{ padding: 2%;}
+        td{text-align: center;width: 300px;padding: 5%;font-weight: bold;}
+</style></head><body>
+    <h1>المبلغ</h1><input type="number" id="amount" placeholder="اكتب المبلغ هنا"> 
+     <button onclick="play()">احسب</button><br><br>
+    <table border="1px">
+        <thead><tr >
+        <th scope="col">المدة بالشهور</th><th scope="col">القسط</th><th scope="col">المصاريف الادارية</th>
+        </tr></thead><tbody>
+            <tr><td>6</td><td id="in6s"></td><td id="p4"> </td></tr>
+            <tr><td>12</td><td id="in12s"> </td><td id="p6"> </td></tr>
+            <tr><td>18</td><td id="in18s"> </td><td id="p7"> </td></tr>
+            <tr><td>24</td><td id="in24s"> </td><td id="p10"> </td></tr>
+            <tr><td>36</td><td id="in36s"> </td><td id="p18"> </td></tr>
+        </tbody></table><script defer>
+        function play() {
+        const amount = document.querySelector('#amount').value;
+///////////////////////////////////////
+        const in6 = amount / 6 ;  const in12 = amount / 12 ;  const in18 = amount / 18 ; 
+        const in24 = amount / 24 ; const in36 = amount / 36 ;
+        const p4 = amount * 0.04 ;  const p6 = amount * 0.06 ;  const p7 = amount * 0.07 ; 
+        const p10 = amount * 0.10 ;  const p18 = amount * 0.18 ; 
+ ///////////////////////////////////////
+        const in6s = document.querySelector('#in6s').innerHTML=in6;
+        const in12s = document.querySelector('#in12s').innerHTML=in12;
+        const in18s = document.querySelector('#in18s').innerHTML=in18;
+        const in24s = document.querySelector('#in24s').innerHTML=in24;
+        const in36s = document.querySelector('#in36s').innerHTML=in36;
+///////////////////////////////////////
+        const p4s = document.querySelector('#p4').innerHTML=p4;
+        const p6s = document.querySelector('#p6').innerHTML=p6;
+        const p7s = document.querySelector('#p7').innerHTML=p7;
+        const p10s = document.querySelector('#p10').innerHTML=p10;
+        const p18s = document.querySelector('#p18').innerHTML=p18;}   
+</script></body></html>
